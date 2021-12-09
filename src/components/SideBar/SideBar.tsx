@@ -63,7 +63,8 @@ export const SideBar: React.FC<SideBarProps> = ({classes}: SideBarProps): React.
             </li>
             <li className={classes.sideBarListItem}>
                 <div id='1' onMouseOver={(e) => onMouseOver(e)}
-                     onMouseLeave={onMouseLeave}>
+                     onMouseLeave={onMouseLeave}
+                     className={classes.colorIcon}>
                     <SearchIcon className={classes.sideBarListItemIcon}/>
                     <Hidden smDown>
                         <Typography className={classes.sideBarListItemLabel} variant="h6">
@@ -74,7 +75,8 @@ export const SideBar: React.FC<SideBarProps> = ({classes}: SideBarProps): React.
             </li>
             <li className={classes.sideBarListItem} >
                 <div id='2' onMouseOver={(e) => onMouseOver(e)}
-                     onMouseLeave={onMouseLeave}>
+                     onMouseLeave={onMouseLeave}
+                     className={classes.colorIcon}>
                     <NotificationIcon className={classes.sideBarListItemIcon} />
                     <Hidden smDown>
                     <Typography className={classes.sideBarListItemLabel} variant="h6">
@@ -85,7 +87,8 @@ export const SideBar: React.FC<SideBarProps> = ({classes}: SideBarProps): React.
             </li>
             <li className={classes.sideBarListItem}>
                 <div id='3' onMouseOver={(e) => onMouseOver(e)}
-                     onMouseLeave={onMouseLeave}>
+                     onMouseLeave={onMouseLeave}
+                     className={classes.colorIcon}>
                     <MessageIcon className={classes.sideBarListItemIcon} />
                     <Hidden smDown>
                     <Typography className={classes.sideBarListItemLabel} variant="h6">
@@ -96,7 +99,8 @@ export const SideBar: React.FC<SideBarProps> = ({classes}: SideBarProps): React.
             </li>
             <li className={classes.sideBarListItem}>
                 <div id='4' onMouseOver={(e) => onMouseOver(e)}
-                     onMouseLeave={onMouseLeave}>
+                     onMouseLeave={onMouseLeave}
+                     className={classes.colorIcon}>
                     <BookmarkIcon className={classes.sideBarListItemIcon} />
                     <Hidden smDown>
                     <Typography className={classes.sideBarListItemLabel} variant="h6">
@@ -107,7 +111,8 @@ export const SideBar: React.FC<SideBarProps> = ({classes}: SideBarProps): React.
             </li>
             <li className={classes.sideBarListItem}>
                 <div id='5' onMouseOver={(e) => onMouseOver(e)}
-                     onMouseLeave={onMouseLeave}>
+                     onMouseLeave={onMouseLeave}
+                     className={classes.colorIcon}>
                     <ListIcon className={classes.sideBarListItemIcon} />
                     <Hidden smDown>
                     <Typography className={classes.sideBarListItemLabel} variant="h6">
@@ -128,6 +133,9 @@ export const SideBar: React.FC<SideBarProps> = ({classes}: SideBarProps): React.
                 </div>
                 </Link>
             </li>
+            <Hidden mdUp>
+                <UserSideProfile classes={classes} smTrue={true}/>
+            </Hidden>
             <li className={classes.sideBarListItem}>
                 <Button
                     onClick={onOpenTweetModal}

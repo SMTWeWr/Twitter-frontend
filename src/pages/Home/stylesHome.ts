@@ -12,7 +12,7 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
         },
         '& .MuiSvgIcon-root': {
             fontSize: 50
-        }
+        },
     },
     sideBarList: {
         position: 'sticky',
@@ -50,12 +50,11 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
                 padding: '0 0',
                 left: 7
             },
-            [theme.breakpoints.up(900)]: {
+            [theme.breakpoints.up(960)]: {
                 width: '80%',
             },
             '&:hover': {
                 backgroundColor: 'rgba(29, 161, 242, 0.1)',
-                [theme.breakpoints.down(960)]: {},
                 [theme.breakpoints.down(760)]: {
                     backgroundColor: '#fff'
                 },
@@ -66,6 +65,13 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
                     fill: theme.palette.primary.main,
                 },
             },
+        },
+        [theme.breakpoints.down(600)]: {
+            '& .MuiIconButton-colorPrimary': {
+                '&:hover': {
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                }
+            }
         },
     },
     sideBarListItemLabel: {
@@ -81,6 +87,15 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
     sideBarListItemIcon: {
         fontSize: 32,
         marginLeft: 3,
+    },
+    colorIcon: {
+        [theme.breakpoints.down(960)]: {
+            '&:hover': {
+                '& svg path': {
+                    fill: 'red !important'
+                }
+            }
+        },
     },
     sideBarTweetButton: {
         padding: theme.spacing(3.2),
@@ -201,8 +216,7 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
     },
     tweetImageInside: {
         position: 'relative',
-        left: -5,
-        maxWidth: 500,
+        left: '-4.5%',
         [theme.breakpoints.down(763)]: {
             justifyContent: 'space-around',
             left: -25,

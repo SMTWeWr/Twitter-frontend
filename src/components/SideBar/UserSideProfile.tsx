@@ -4,15 +4,17 @@ import {Avatar, colors, Typography} from "@material-ui/core";
 import ArrowBottomIcon from '@mui/icons-material/KeyboardArrowDown';
 import {Link} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux";
+import LogoutIcon from '@mui/icons-material/Logout';
 import {selectUserData} from "../../store/ducks/user/userSelectors";
 import {fetchSignOutUser} from "../../store/ducks/user/userAction";
 
 
 type UserSideProfileProps = {
     classes: ReturnType<typeof useHomeStyles>
+    smTrue?: boolean
 }
 
-export const UserSideProfile: React.FC<UserSideProfileProps> = ({classes}: UserSideProfileProps): React.ReactElement => {
+export const UserSideProfile: React.FC<UserSideProfileProps> = ({classes, smTrue}: UserSideProfileProps): React.ReactElement => {
     const dispatch = useDispatch()
     const userData = useSelector(selectUserData)
     const popupRef = useRef<HTMLDivElement>(null);
@@ -47,6 +49,19 @@ export const UserSideProfile: React.FC<UserSideProfileProps> = ({classes}: UserS
             document.body.removeEventListener('click', handleOutsideClick)
         }
     }, [visiblePopup]);
+
+    if(smTrue && userData) {
+        return (
+            <div onClick={handleSignOut} >
+                <li className={classes.sideBarListItem}>
+                    <div>
+                        <LogoutIcon className={classes.sideBarListItemIcon} />
+                    </div>
+                </li>
+            </div>
+        )
+    }
+
 
     return (
         <>
