@@ -218,7 +218,7 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
         position: 'relative',
         left: '-4.5%',
         [theme.breakpoints.down(763)]: {
-            justifyContent: 'space-around',
+            justifyContent: 'space-between',
             left: -25,
         },
     },
@@ -315,7 +315,6 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         paddingTop: 5,
-        // alignItems: 'center',
         minWidth: 220,
     },
     addFormBottomActions: {
