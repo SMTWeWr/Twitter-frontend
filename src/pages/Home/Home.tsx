@@ -75,7 +75,7 @@ export const Home = () => {
                                 fullWidth>
                             <Hidden smDown>Кликните чтобы вернуться на главную</Hidden>
                             <Hidden mdUp>
-                                Главаная
+                                Главная
                             </Hidden>
                         </Button>
                     </Link>
